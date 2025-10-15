@@ -1,0 +1,48 @@
+Agenda week1.day1
+- Introduction Of JavaScript
+- Data Types
+- Break
+- BreakOut
+
+javascript --> interpreter programming language
+           --> light weight 
+           --> objectOriented (Prototype based)
+           --> node.js engine for execution outside the browser
+           --> js engine (browser specific)
+        Features:
+         -->supports both front end and backend dev (full stack development)
+           clientside and server side validation
+           Even driven architecture (event loop)
+           asynchronous programming
+           Single thread non blocking i/o
+
+js -->transpiled (AST -->abstract syntax tree)
+  parsing the code -->byte code exe -->binaries(0's and 1's)
+
+jit compiler
+  variables -->a,b
+   expressions--> *
+    
+Datatypes
+  -->type of information you store 
+  primitive and non primitive -->object specific array
+   number
+   string
+   boolean
+   undefined
+
+   null -->intentionally to make the varible null (not using the value)
+   bigInt -->long numbers
+   symbol --> unique information -->accessed in the way of object type
+
+
+
+   Number -->holds  data -->single , multiple digits, decimals
+
+   filename -->camelCase
+   variables -->camelCase -->isActive
+   class -->PascalCase  --> LoginPage
+
+run the code 
+ node fileName.js
+-----------------------
