@@ -1,0 +1,172 @@
+Agenda
+week1.day2
+
+-> Different Between Var,Let,Const
+-> Break
+-> BreakOut
+-> Conditional Statement (if condition)
+-> BreakOut
+
+ var
+ ES 15  
+ let const
+
+ difference- 
+ var let const
+
+ var 
+ 1. allows redeclaration of variables and also reassignement 
+   var username="user1"
+   var username="user2"
+
+ let 
+  doesnt allow to redeclare
+  allows to reassign the value
+
+  var -->allows redeclare and reassignement
+  let -->doesnot allows redeclare and allows reassignment
+  for both let and var -->reassign -->last value will be used in further steps
+            
+      
+                             -->existing data becomes unused
+
+
+
+ClassRoom:
+
+var empDetails = string
+empDetails=number
+
+var empDetails=boolean
+
+
+let studentInfo=number
+studentInfo=null
+
+const piValue=number
+
+Control Statements:
+
+
+
+ arithmentic
++
+-
+/  -->quotient
+*
+%  --> 1 (remainder)
+
+comparision of data  -> return type boolean
+<
+6<5 -> false
+>
+7>5 ->true
+>=
+3>=4
+<=
+==
+!=
+6>=9
+3<=2
+
+
+post incerment :
+i++
+let num=5
+for(let i=0;i<num;i++) 
+0+1=1
+1+1
+++  --> data +1
+
+post decerment 
+-- -->data-1
+
+logical - boolean
+
+&&-> AND , || ->OR 
+
+(5==5 && 6<5)
+(true && false) = false
+
+(5==5 || 6<5)
+(true || false)= true
+
+ternary operator -->? 
+
+
+
+Conditional Statements:
+Conditional statements are used to control the flow of the program based on certain conditions. 
+These statements allow the program to make decisions and execute different blocks of code 
+depending on whether a specified condition evaluates to true or false. The primary 
+conditional statements in Java include:
+1. if Statement:
+Definition: The if statement is used to execute a block of code only if a
+ specified condition is true.
+
+Syntax:
+
+if (condition) {
+    // Code to be executed if the condition is true
+}
+let age=-2
+if(-2>0)- false
+if(age>0){
+syso("vote");
+}
+
+2. if-else Statement:
+Definition: The if-else statement is used to execute one block of code if the condition is true and 
+another block of code if the condition is false.
+
+Syntax:
+
+if (condition) {
+    // Code to be executed if the condition is true
+} else {
+    // Code to be executed if the condition is false
+}
+
+Ex:
+let age=17;
+if(age>=18){  
+  console.log("vote")
+}else{
+  console.log("i cannot vote")
+}
+output as:i cannot vote
+
+
+
+
+3. if else-if else Statement:
+Definition: The if-else if-else statement allows you to check multiple conditions in sequence. 
+It executes the first block of code whose condition is true.
+
+Syntax:
+
+if (condition1)  {
+    // Code to be executed if condition1 is true
+}else if (condition2) {
+    // Code to be executed if condition2 is true
+} 
+else if (condition 3){
+      // Code to be executed if condition3 is true
+
+  }else {
+    // Code to be executed if none of the conditions is true
+}
+
+
+
+Class Room:
+
+let mark 50
+if(m>70)
+c.l(A)
+else if(m>55)
+c.l(B)
+else if(m>45)
+c.l(C)
+else
+c.l(D)
