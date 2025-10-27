@@ -1,0 +1,6 @@
+save filename as "filename.spec.ts"
+filename should not have any white space inbetween
+lanuch_Browser
+
+execution: should it from workspace
+npx playwright test filename.spec.ts
