@@ -1,0 +1,59 @@
+week3.day3
+-> Dropdown
+-> Break
+-> Breakout
+-> Xpath
+
+Dropdown:
+1. select tag dropdown
+<select>
+<option>
+
+await page.selectOption()
+label --> visible text
+value --> value attribute
+index --> index of the option (0,1,2,3...)
+
+
+2. Non Select tag dropdown
+<li>
+<ul>
+
+-> normal click-> click()
+await page.locator().click()
+
+
+
+
+
+ClassRoom:
+Use PageFixture
+Url:https://www.telerik.com/contact
+1st dropdown -> index
+2nd dropdown -> value
+3rd dropdown -> label
+
+
+Xpath:
+Attribute based xpath:
+//tagName[@attributeName='atrributevalue']
+
+//input[@id='email']
+
+Text Based xpath:
+//tagName[text()='text value']
+//span[text()='phones']
+
+partial Attribute based xpath:
+//tagName[contains(@id,'value')]
+//input[contains(@id,'input')]
+
+partial text based xpath:
+//tagname[contains(text(),'value')]
+//span[contains(text(),'Mobile')]
+
+collection or index based xpath
+(//tagname[@attribute='atrributevalue'])[index value]
+(//span[contains(text(),'Mobile')])[3]
+index value -> start from 1 and it should not go beyond 5
+(//span[@class='a-price-whole'])[8]
