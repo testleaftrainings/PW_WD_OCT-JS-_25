@@ -1,0 +1,56 @@
+day04
+-> Advance Xpath
+-> Breakout 
+-> Break
+-> Playwright Assertion
+
+
+
+Xpath:
+Parent to child:
+//p[@class='top']/input
+
+GP to GC 
+//div[@class='nav-fill']//input
+
+ES  to YS
+//label[text()='Search Amazon.in']/following-sibling::input
+
+EC to YC
+Basic EC /following:: tagName YC
+
+
+
+ClassRoom:
+
+https://www.snapdeal.com/
+- > search box use parent to child
+ -> under 'Trending Searches' ->  kitchen product -> Gp to GC 
+
+https://www.ajio.com/
+=> search icon -> EC to YC
+
+methods:
+
+.first()
+.nth()
+.last()
+
+Playwright in-bulit wait -> 30sec
+
+Playwright Assertions:
+
+default time -> 5sec
+Types:
+1.Auto Retry 
+2.Non-Retry
+3.soft
+4.hard
+
+Assertions tpes:
+Generic Type- toEqual, toHaveTitle
+Locator Type -tobeEnabled
+page type - toHaveURL
+API Assertions
+Negating Assertions
+expect().not.
