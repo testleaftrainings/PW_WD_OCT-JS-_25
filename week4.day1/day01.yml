@@ -1,0 +1,53 @@
+Day 01
+
+-> Playwright Locators
+-> Break 
+-> Breakout
+-> Arrays
+-> Breakout
+
+Playwright getBy Locators: Playwright provides a set of getBy methods to locate elements in the DOM, which can be more expressive and powerful compared to traditional CSS selectors. These methods are used to interact with web elements in a more human-readable way.
+
+Commonly Used getBy Locators getByText: Selects elements containing specific text. Example: page.getByText('Submit') selects an element with the text "Submit".
+
+page.getByText('Leads').click()
+
+getByRole: Selects elements based on their ARIA roles. Example: page.getByRole('button', { name: 'Login' }) selects a button element with the accessible name "Login".
+
+page.getByRole('input',{name:'companyName'})
+
+getByLabel: Selects form elements associated with a specific label. Example: page.getByLabel('Username') selects the input field associated with the label "Username".
+
+getByPlaceholder: Selects input elements based on their placeholder attribute. Example: page.getByPlaceholder('Enter your password') selects an input field with the placeholder "Enter your password".
+
+getByAltText: Selects images and other elements with an alt attribute. Example: page.getByAltText('Product image') selects an image with the alt text "Product image".
+
+
+
+ClassRoom:
+http://leaftaps.com/opentaps/control/main
+Enter username -> getByLable
+enter password -> getByRole 
+clickon login button -> getByRole
+click crmsfa -> getByRole
+
+
+Array:
+
+collection Data
+Store Multiple data
+it have all types of data [1,'dilip',true] -> pass value inside []
+
+ClassRoom 1
+
+let data=[23,56,32,45,56,78,89,40,78]
+find length
+find duplicate value (nested for loop)
+
+let value-[23,true,'a','r','test',57]
+find Length
+unshift -> 34
+push ->'js'
+splice(2,2,"a","b")
+shift
+pop
