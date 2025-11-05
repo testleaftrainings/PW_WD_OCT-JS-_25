@@ -1,0 +1,28 @@
+Day 03
+-> Alert
+-> Break 
+-> Breakout
+
+Alert:
+Popup message
+Error Message
+Warning Message
+
+*We cannot ingore alert
+
+Modal alert:
+simple alert -> can only one action OK
+confirmation alert -> two action (OK, Cancel)
+prompt alert -> input box, (OK, Cancel)
+
+
+
+Page.on
+  url :https://www.leafground.com/alert.xhtml
+  click on Show button in confirmationalert
+  -> dismiss
+  click on Show button in prompt alert
+  -> accept(enter your name)
+  -> print value with innerText()
+ 
+
