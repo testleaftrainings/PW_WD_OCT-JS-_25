@@ -1,0 +1,12 @@
+day 01
+
+-> Window Handling
+-> Break
+-> Multiple Window Handling
+-> Breakout
+
+ClassRoom:
+load url: https://www.leafground.com/window.xhtml
+click on Open button
+Handle window(create promise, do the action , resolve)
+Enter Mail id 
