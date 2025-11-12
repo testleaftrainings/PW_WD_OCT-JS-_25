@@ -1,0 +1,58 @@
+-> Breakout (Storage State)
+-> Test Annotation
+-> Break
+-> Breakout
+
+# Test Annotation :
+---
+
+--> Control the behaviour of the execution.
+
+hooks -> The execution flow before and after the actual test execution.
+------
+test.beforeAll --> before all test it will be executed
+test.beforeEach --> before each test it will be executed
+test.afterEach -->  after each test it will be executed
+test.afterAll --> after all test it will be executed
+
+
+test.beforeAll() -> Storage State
+
+test.beforeEach() -> Data Parameter
+
+test() -> Create Account
+
+test() -> Create Lead
+
+test.afterEach() ->  title,status
+
+test.afterAll() -> report upload
+
+
+
+Test Annotation
+---
+
+test.only --> focus on a specific test.
+test.skip --> ignore the test from execution
+test.fixme --> track and know failures that are yet to be fixed
+test.fail --> for negative testing --> test has to fail is the expectation
+test.slow --> triple the timeout of the tests execution --> 30 s --> 60 s for the entire test execution
+test.describe --> grouping the test depending on the status of the other test.
+test.use -->use the functionalities
+
+test.describe->
+serial -> depending on the test ->  any one test is failed -> it will stop execution
+squential -> execute test one by one
+parallel -> any test failed , other test will execute
+
+//test.describe -> group of test cases
+
+//test.describe.serial -> to run the test cases in serial manner -> if any one test is failed . it will
+//stop the execution of next test cases (depends-on)
+
+//test.describe.parallel -> to run the test cases in parallel manner -> if any one test is failed . it will
+//not stop the execution of next test cases
+
+//test.describe.squential(default) -> to run the test cases in sequential manner -> if any one test is failed . it will 
+//not stop the execution of next test cases
