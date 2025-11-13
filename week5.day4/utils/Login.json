@@ -1,0 +1,12 @@
+[
+{
+"TestCase":"TC001",
+"UserName":"DemoCsr",
+"Password":"crmsfa"
+},
+{
+  "TestCase":"TC002",
+"UserName":"DemoCsr2",
+"Password":"crmsfa"  
+}
+]
