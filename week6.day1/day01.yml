@@ -1,0 +1,52 @@
+week6.day1
+
+-> Env file
+-> CSV file
+
+
+
+
+
+Multiple file to read
+const fileTORead=process.env.envFile
+dotenv.config({path:`constants/${fileTORead}.env`})
+
+set the filename
+$env:envFile="LoginDev"
+$env:envFile="LoginQa"
+unset
+$env:envFile=""
+
+to know which file is set for execution
+$env:envFile
+
+
+csv -comma separated values
+TestCaseID,Username,password
+Tc001,dilip@testleaf.com,Leaf@123
+Tc002,vidyar@testleaf.com,Sales@123
+
+
+step:1 --> install csv-parse
+ npm install csv-parse
+
+step:2 --> use parse() --> imported from csv-parse/sync
+parse(pathofthefile)
+
+step:3 -->install fs (file system)
+npm install fs
+
+Each row will be considered as one test 
+2 tests -->unique desc of the test
+
+path.join(__dirname,"") -->current directory with the filepath
+path.resolve(__dirname,"")
+
+columns-->true -->read first row as header
+
+to read single data
+
+for(){
+// Learn to read CSV values -> Tc001
+// Learn to read CSV values -> Tc002
+}
