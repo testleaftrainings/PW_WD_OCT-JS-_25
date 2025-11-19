@@ -1,0 +1,219 @@
+{
+	"info": {
+		"_postman_id": "6783a3ab-d5ac-4cb9-ba33-08fbc6ec38d6",
+		"name": "PW_OCT_WD_API",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json",
+		"_exporter_id": "34817915"
+	},
+	"item": [
+		{
+			"name": "CreateIncident",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 201\", function () {\r",
+							"    pm.response.to.have.status(201);\r",
+							"});\r",
+							"//golabal variabe\r",
+							"var response=pm.response.json()\r",
+							"var Sys_id=response.result.sys_id\r",
+							"console.log(Sys_id)\r",
+							"\r",
+							"//pm.globals.set(\"W_Sys\",Sys_id)\r",
+							"\r",
+							"//pm.collectionVariables.set(\"C_Sys\",Sys_id)\r",
+							"\r",
+							"pm.environment.set(\"E_Sys\",Sys_id)\r",
+							"\r",
+							""
+						],
+						"type": "text/javascript",
+						"packages": {},
+						"requests": {}
+					}
+				},
+				{
+					"listen": "prerequest",
+					"script": {
+						"exec": [
+							""
+						],
+						"type": "text/javascript",
+						"packages": {},
+						"requests": {}
+					}
+				}
+			],
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": {
+						"password": "tj6Z5^xHfIH+",
+						"username": "admin"
+					}
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "c",
+						"value": "",
+						"type": "text",
+						"disabled": true
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"short_description\": \"Learn API Form Postman\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "https://dev354719.service-now.com/api/now/table/incident"
+			},
+			"response": []
+		},
+		{
+			"name": "GetIncident",
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": {
+						"password": "tj6Z5^xHfIH+",
+						"username": "admin"
+					}
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/ecmascript",
+						"type": "text"
+					}
+				],
+				"url": "https://dev354719.service-now.com/api/now/table/incident/{{E_Sys}}"
+			},
+			"response": []
+		},
+		{
+			"name": "UpdateIncident",
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": {
+						"password": "tj6Z5^xHfIH+",
+						"username": "admin"
+					}
+				},
+				"method": "PATCH",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "c",
+						"value": "",
+						"type": "text",
+						"disabled": true
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"short_description\": \"Patch reuqest\"\r\n}"
+				},
+				"url": "https://dev354719.service-now.com/api/now/table/incident/{{W_Sys}}"
+			},
+			"response": []
+		},
+		{
+			"name": "DeleteIncident",
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": {
+						"password": "tj6Z5^xHfIH+",
+						"username": "admin"
+					}
+				},
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "c",
+						"value": "",
+						"type": "text",
+						"disabled": true
+					}
+				],
+				"url": "https://dev354719.service-now.com/api/now/table/incident/0711e32d93197a50af6afd10ed03d6fa"
+			},
+			"response": []
+		},
+		{
+			"name": "QureyParameter",
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": {
+						"password": "tj6Z5^xHfIH+",
+						"username": "admin"
+					}
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "https://dev354719.service-now.com/api/now/table/incident?sysparm_fields=short_description&sysparm_limit=10",
+					"protocol": "https",
+					"host": [
+						"dev354719",
+						"service-now",
+						"com"
+					],
+					"path": [
+						"api",
+						"now",
+						"table",
+						"incident"
+					],
+					"query": [
+						{
+							"key": "sysparm_fields",
+							"value": "short_description"
+						},
+						{
+							"key": "sysparm_limit",
+							"value": "10"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"variable": [
+		{
+			"key": "C_Sys",
+			"value": ""
+		}
+	]
+}
