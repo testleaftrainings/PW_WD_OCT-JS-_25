@@ -1,0 +1,68 @@
+week7.day2
+-> OOPS (class, object,Access Modifiers)
+->  Break + BreakoutSession
+-> Inheritance
+-> BreakoutSession
+
+
+oops with typescript
+
+OOPs-> Object Oriented Programming Language
+-> Object
+java script -> prototype based
+-> Reusability
+-> Maintainable
+-> Readable
+-> Scalability
+-> Redundancy
+-> Modularity
+
+
+Class:
+
+A Class is like a template or buleprint that defines properties and methods 
+to all object of that type.
+
+* properties let name="Dilip" 
+let name:string="Dilip"
+
+* methods -> launchBrowser(){
+}
+
+* constructor -> it will initialize the class properties and Methods 
+while cereating Object
+
+class Browser{
+
+//properties
+empName:string="Dilip"
+comName:string
+//method
+browserDetails(){
+
+}
+
+//constructor -  two types
+1. Default -> constructor(){
+}
+
+2. parameter -> constructor(comName:string){
+this.comName=comName
+}
+
+this-> will reffer the current class properties and methods
+
+constructor:
+1. Default -> constructor()
+2. paramter -> constructor(user:string,age:number)
+
+
+Class Room 1:
+Class as LoginPage
+ properties -> url,title
+methods -> public login(), private logout()
+constructor -> paramterized constructor(url:string,title:string)
+create object inside same file 
+
+create another file 
+call the LoginPage 
