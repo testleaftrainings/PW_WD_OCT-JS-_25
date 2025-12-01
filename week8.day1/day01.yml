@@ -1,0 +1,45 @@
+-> Abstraction
+-> Break + Break
+-> Custom Fixture
+
+
+Abstraction-> interface, abstract class, normal class
+interface -> fully abstract method -> we cannot to implement method
+launchBrowser()
+
+abstract class -> partial implement-> both implement and unimplement
+0 to 100% abstract method
+loadUrl(){
+}
+
+abstract logindata()
+
+normal class-> execution program
+
+
+ClassRoom:
+create abstract class 
+fill() -> implement
+clear()->implement
+locator()-> unimplement
+frame() -> unimplement
+
+create class 
+-> implement methods
+-> create object and call the methods
+
+
+Fixture:
+-> page , request
+-> page ->browser-new context - new page
+-> request -> browser - new context- API request
+
+custom Fixture:
+user defined Fixture
+testfile usinfg test.extend[]
+
+
+
+custom fixture:
+custom file ->  salesforces login information
+test file -> app launcher
