@@ -1,0 +1,77 @@
+week8.day2
+
+-> POM
+
+
+Design Pattern:
+POM -> Page Object Model
+based on the webpage 
+
+LoginPage:
+*username
+*password
+*clickonLogin
+
+WelcomePage:
+*Click on crmsfa
+*Logout
+
+MyHomePage:
+*Leads
+*Accounts
+*Cases
+
+MyLeadsPage:
+*CreateLead -click 
+
+
+CreateLead:
+*Cname
+*Fname
+*Lname
+
+ViewLead:
+*verify 
+
+MyAccountPage:
+*CreateAccount
+
+AccountsPage:
+*AccountName
+
+POM:
+*Organizing the code
+*Improved Readability
+*Easy Maintenances
+*Increased Prod
+* Reusability
+
+LoadUrl(){
+url
+}
+
+enteruserdetails(){
+username
+password
+}
+
+
+clickOnLogin(){
+
+}
+
+POM:
+
+pages -> .ts file
+execution -> .spec.ts file
+
+
+
+
+
+ClassRoom:
+salesforces -> dilipkumar.rajendran@testleaf.com , TestLeaf@2025
+Login page
+HomePage -> Leads,Tasks,Accounts
+LeadsPage -> New button
+AccountsPage -> Discover companies
