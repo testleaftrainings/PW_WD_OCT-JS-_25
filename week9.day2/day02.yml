@@ -1,0 +1,156 @@
+week9.day2
+
+->MCP
+->Breakout Sessions
+-> ALlure Report 
+
+
+
+MCP Server (Model Context Protocol Server)
+
+What it is:
+A system that allows tools, scripts, databases, or automation frameworks (like Playwright) to connect with AI agents such as ChatGPT.
+
+Think of it like:
+A bridge that lets ChatGPT access real tools and run actions safely.
+
+Simple explanation:
+MCP server =
+A middleman that connects your local tools (like Playwright, OS commands, files) with an AI assistant(co-pilot) so the AI can help automate tasks.
+
+
+Commands for Allure Reports
+---------------------------
+in the configuration make below changes:
+reporter: [['html'], ['allure-playwright']],
+
+And execute below commands in the terminal :
+
+1. npm i -D allure-playwright
+
+2. npm i -g allure-commandline --save-dev
+
+3. allure serve
+
+
+
+Allure is a flexible, lightweight test reporting tool that creates interactive HTML reports from test results. It supports attachments (screenshots, logs), hierarchical organization (epic/feature/story), test metadata (severity, owner, tags), and rich test navigation.
+
+Why use Allure with Playwright?
+
+Offers richer, interactive reports compared to plain HTML or console output.
+
+Supports attachments (screenshots, videos, logs) which are invaluable for debugging failed tests.
+
+Lets you add metadata and organize tests for better traceability.
+
+Quick setup (commands)
+# Initialize project (if not already)
+npm init -y
+
+
+# Install Playwright + Allure adapter
+npm install --save-dev @playwright/test allure-playwright allure-commandline
+
+
+# Install browsers (optional but recommended)
+npx playwright install
+
+Note: allure-commandline provides the allure CLI used to generate/serve reports. Some teams prefer using a globally installed Allure binary instead.
+
+Key files (copy these into your project)
+package.json (scripts)
+{
+  "name": "playwright-allure-example",
+  "version": "1.0.0",
+  "type": "module",
+  "scripts": {
+    "test": "npx playwright test",
+    "allure:generate": "allure generate allure-results --clean -o allure-report",
+    "allure:open": "allure open allure-report",
+    "allure:serve": "allure serve allure-results"
+  },
+  "devDependencies": {
+    "@playwright/test": "*",
+    "allure-playwright": "*",
+    "allure-commandline": "*"
+  }
+}
+playwright.config.ts
+import { defineConfig } from '@playwright/test';
+
+
+export default defineConfig({
+  testDir: './tests',
+  timeout: 30_000,
+  reporter: [
+    ['list'],
+    ['allure-playwright', { resultsDir: 'allure-results' }]
+  ],
+});
+tests/example.spec.ts
+import { test, expect } from '@playwright/test';
+import { allure } from 'allure-playwright';
+
+
+test('basic example with allure metadata and attachment', async ({ page }) => {
+  // Add metadata
+  await allure.epic('Login Flow');
+  await allure.feature('Sign in');
+  await allure.story('Valid credentials');
+  await allure.severity('critical');
+  await allure.owner('Lokeshwaran');
+
+
+  // Test steps
+  await page.goto('https://example.com');
+  await expect(page).toHaveTitle(/Example/);
+
+
+  // Take and attach a screenshot to the report
+  const screenshot = await page.screenshot();
+  await allure.attachment('homepage-screenshot', screenshot, 'image/png');
+});
+
+Tip: Use runtime API (shown above) to attach data during test execution. You can also use metadata API by adding @allure.* labels to the test name.
+
+Run tests & generate report
+# Run tests (this will create allure-results/)
+npm test
+
+
+# Serve results directly (generates and opens report)
+npm run allure:serve
+
+
+# Or generate a static report folder and open it
+npm run allure:generate
+npm run allure:open
+Adding screenshots on failure (example using Playwright hooks)
+
+Create tests/helpers/test-setup.ts and import it in your tests (or configure via global setup):
+
+import { test as base } from '@playwright/test';
+import { allure } from 'allure-playwright';
+
+
+export const test = base.extend({});
+
+
+base.afterEach(async ({ page }, testInfo) => {
+  if (testInfo.status !== 'passed') {
+    const screenshot = await page.screenshot();
+    await allure.attachment('screenshot-on-failure', screenshot, 'image/png');
+  }
+});
+Useful Allure labels / runtime functions
+
+allure.epic(), allure.feature(), allure.story() — hierarchical organization
+
+allure.severity() — set severity like blocker, critical, normal, minor, trivial
+
+allure.owner() — assign an owner
+
+allure.tags() — add tags
+
+allure.attachment(name, content, type) — attach images/logs
